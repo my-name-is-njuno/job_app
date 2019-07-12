@@ -1,0 +1,26 @@
+<div class="album py-5 bg-light">
+    <div class="container">
+
+      <div class="row justify-content-center">
+        
+        <div class="col-sm-12 mb-5">
+          <h1 class="text-center" >Apply For {{job.title}}</h1>
+          <h5 class="text-center">
+            At {{job.company}}
+          </h5>
+        </div>
+
+        <hr>
+
+        <div class="col-sm-8">
+          <form action="/job/apply/{{job.id}}" method="post">
+                        
+            <button type="submit" class="btn btn-primary btn-lg btn-block">Apply</button>
+
+          </form>
+
+        </div>
+      </div>
+       
+    </div>
+  </div>

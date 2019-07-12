@@ -1,0 +1,72 @@
+
+<div class="album py-5 bg-light">
+    <div class="container">
+
+      <div class="row justify-content-center">
+        <h1 class="text-center" >Job Details</h1>
+        <hr>
+        <div class="col-sm-8">
+          
+
+          <div class="card mb-1 shadow-sm">
+                <h5 class="p-2 m-0">
+                  {{job.title}}
+                  <span class="float-right">
+                  {{#if apply}}
+                      <button class="btn btn-success btn-sm">Applied</button>
+                    {{else}}
+                      {{#if seen}}
+                        <button class="btn btn-secondary btn-sm">Old</button>
+                      {{else}}
+                        <button class="btn btn-primary btn-sm">New</button>
+                      {{/if}}
+
+                    {{/if}}
+                  </span>
+                </h5>
+                <hr class="m-0">
+                <div class="card-body">
+
+                  <p class="card-text">
+                    <b>Ref: </b>{{job.ref}}.<br>
+                    <b>Company: </b>{{job.company}}.<br>
+                    <b>Apply Before: </b>{{job.closing_date}}.<br>
+                    <b>Type: </b>{{type}}.<br><br>
+                    <b>Added On : </b>{{job.created_at}}.<br><br>
+                    <b><a href="{{job.website}}" target="_blank">Visit Website</a>.</b><br>                    
+                    <b><a href="{{job.link}}" target="_blank">Advertised Here</a>.</b>
+                      
+                      <br>
+                      <br>
+                    <b>Emails: </b><br>
+                    <span class="px-2 bg-secondary text-white">{{job.email}}</span>
+                  </p>
+                  <hr>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      
+          
+
+                        {{#if job.apply}}
+                          <button type="button" class="btn btn-sm btn-warning">Already Applied</button>
+                          <a type="button" href="/na/{{job.id}}" class="btn btn-sm btn-outline-danger">Delete</a>
+                        {{else}}
+                          <a type="button" href="/edit/{{job.id}}" class="btn btn-sm btn-outline-info">Edit</a>
+                          <a type="button" href="/appy/{{job.id}}" class="btn btn-sm btn-outline-success">Apply</a>
+                        {{/if}}
+
+                      
+                    </div>
+                    <small class="text-muted">9 mins ago</small>
+                  </div>
+
+                </div>
+                
+
+            </div>
+
+        </div>
+      </div>
+       
+    </div>
+  </div>
